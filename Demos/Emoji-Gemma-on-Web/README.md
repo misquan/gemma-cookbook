@@ -21,9 +21,6 @@ Notebooks to fine-tune and optimize Gemma 3 270M for web
 | [Convert to ONNX](https://github.com/misquan/Emoji-Gemma-on-Web/blob/main/resources/Convert_Gemma_3_270M_to_ONNX.ipynb) | Quantize and convert Gemma 3 to `.onnx` for use with Transformers.js via ONNX Runtime  |
 
 ### Datasets
-Datasets provided in .csv format that you can use for fine-tuning
-| Dataset  | Description |
-| ------------- |-------------|
-| [Premade](https://github.com/misquan/Emoji-Gemma-on-Web/blob/main/resources/Emoji%20Translation%20Dataset%20%20-%20Dataset.csv)      | A dataset with 1000+ examples of text and corresponding emoji combinations |
-| [Blank](https://github.com/misquan/Emoji-Gemma-on-Web/blob/main/resources/Emoji%20Translation%20Dataset%20Template%20-%20Dataset.csv)      | A dataset template to hold 'text' and 'emoji' pairs |
-| Community | Coming soon |
+Datasets provided in .csv format that you can use for fine-tuning. Community datasets coming soon!
+* [Premade](https://github.com/misquan/Emoji-Gemma-on-Web/blob/main/resources/Emoji%20Translation%20Dataset%20%20-%20Dataset.csv):  A dataset with 1000+ examples of text and corresponding emoji combinations
+* [Blank](https://github.com/misquan/Emoji-Gemma-on-Web/blob/main/resources/Emoji%20Translation%20Dataset%20Template%20-%20Dataset.csv): A dataset template to hold 'text' and 'emoji' pairs
