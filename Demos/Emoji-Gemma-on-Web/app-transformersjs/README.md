@@ -5,7 +5,7 @@ This app demonstrates how to generate emojis from a text input using a fine-tune
 Fine-tuning allows you to adapt models to specific tasks by training it with your own data.  To use your own fine-tuned model, you'll first need to convert it to the .onnx format. You can then replace the demo model by updating the model path in `worker.js`.
 
 ## How it works
-This demo sets up a simple web server to host a frontend where users can enter a text prompt. This starts a generation process in a web worker to avoid blocking the main UI thread. The worker uses Transformers.js to generate a response from the model and send it back to the user.
+This demo sets up a simple web server to host a frontend where users can enter a text prompt. This starts a generation process in a web worker to avoid blocking the main UI thread. The worker uses [Transformers.js](https://huggingface.co/docs/transformers.js/index) to generate a response from the model and send it back to the user.
 
 
 ## Run the demo
@@ -18,9 +18,9 @@ This demo sets up a simple web server to host a frontend where users can enter a
 **To run your own model:**
 
 *  Convert your fine-tuned Gemma 3 270M model to the .onnx format.
-*  Download the app files and replace the model string in the `pipeline()` function call in `worker.js` to point to your repository on Hugging Face Hub.
+*  Download the app files in this directory and replace the model string in the `pipeline()` function call in `worker.js` to point to your model on Hugging Face Hub.
     *  Alternatively, include the model files in a new subdirectory i.e. `./myemoji-gemma-3-270m-it-onnx/` for full offline use.
-*  Follow the steps above to run the app locally by using the path to your directory.
+*  Open your terminal, navigate (cd) to your app's directory, and run steps 3-4 above.
  
 ## Resources
 * [Colab: Fine-tune Gemma 3 270M IT](https://github.com/misquan/Emoji-Gemma-on-Web/blob/main/resources/Fine_tune_Gemma_3_270M_for_emoji_generation%20(1).ipynb)
