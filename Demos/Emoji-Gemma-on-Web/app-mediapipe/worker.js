@@ -7,7 +7,11 @@ const { FilesetResolver, LlmInference } = self.BundledCode;
 
 let pipe;
 // Ensure this filename matches your actual model file.
-let modelPath = './gemmoji.task'; 
+let modelPath = './myemoji-gemma-3-270m-it.task'; 
+
+const START_TURN_USER = "<start_of_turn>user\n";
+const END_TURN_USER = "<end_of_turn>\n";
+const START_TURN_MODEL = "<start_of_turn>model\n";
 
 // Listen for messages from the main thread
 self.onmessage = async (event) => {
@@ -42,15 +46,19 @@ self.onmessage = async (event) => {
         self.postMessage({ type: "error", data: "Model not loaded yet." });
         return;
       }
+
+
+
       try {
         const generatedResponses = new Set();
-        const prompt = `Translate this text to emoji: ${data.prompt}\nEmoji:`;
+        const prompt = `${START_TURN_USER}Translate this text to emoji: ${data.prompt}${END_TURN_USER}${START_TURN_MODEL}`;
 
         for (let i = 0; i < 3; i++) {
           const modifiedPrompt = prompt + ' '.repeat(i);
-          const response = await pipe.generateResponse(modifiedPrompt);
-          if (response.trim()) {
-            generatedResponses.add(response.trim());
+          const rawResponse = await pipe.generateResponse(modifiedPrompt);
+          const cleanResponse = rawResponse.replace(/[^\p{Emoji}\s]/gu, '').trim();
+          if (cleanResponse) {
+            generatedResponses.add(cleanResponse);
           }
         }
         generatedResponses.forEach(response => {
