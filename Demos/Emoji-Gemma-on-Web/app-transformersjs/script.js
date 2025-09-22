@@ -41,15 +41,15 @@ async function initializeModelInWorker() {
 
     switch (type) {
       case "status_update":
-        loadingDisclaimer = `<p>${data}`;
+        loadingDisclaimer = `<span style="display:block">${data}</span>`;
         break;
 
       case "progress":
-        statusMessageContainer.textContent = `Loading model (${data.progress}%)${loadingDisclaimer}`;
+        statusMessageContainer.innerHTML = `Loading model (${data.progress}%)${loadingDisclaimer}`;
         break;
 
       case "loaded":
-        statusMessageContainer.textContent = `Loading model (100%)${loadingDisclaimer}`; // Show 100% briefly
+        statusMessageContainer.innerHTML = `Loading model (100%)${loadingDisclaimer}`; // Show 100% briefly
         modelReady = true;
         generateBtn.disabled = false; // Enable the generation button upon model load
         setTimeout(() => { // Then switch to the final message

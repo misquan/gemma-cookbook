@@ -48,7 +48,7 @@ self.onmessage = async (event) => {
           } else {
             clearInterval(progressInterval);
           }
-        }, 500);
+        }, 50);
 
         pipe = await pipeline(
           "text-generation", 
@@ -69,7 +69,7 @@ self.onmessage = async (event) => {
     case "generate":
       try {
         const messages = [
-          { "role": "system", "content": "Translate this text to emoji." },
+          { "role": "system", "content": "Translate this text to emoji: " },
           { "role": "user", "content": data.prompt },
         ];
         const generatedResponses = new Set();
