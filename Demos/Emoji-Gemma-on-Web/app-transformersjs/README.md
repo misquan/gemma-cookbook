@@ -1,4 +1,4 @@
-# Run a fine-tuned Gemma 3 270M model in the browser with MediaPipe LLM Inference API
+# Run a fine-tuned Gemma 3 270M model in the browser with Transformers.js
 
 This app demonstrates how to generate emojis from a text input using a fine-tuned Gemma 3 270M model running directly in the browser. 
 
@@ -6,7 +6,6 @@ Fine-tuning allows you to adapt models to specific tasks by training it with you
 
 ## How it works
 This demo sets up a simple web server to host a frontend where users can enter a text prompt. This starts a generation process in a web worker to avoid blocking the main UI thread. The worker uses [Transformers.js](https://huggingface.co/docs/transformers.js/index) to generate a response from the model and send it back to the user.
-
 
 ## Run the demo
 
@@ -23,6 +22,6 @@ This demo sets up a simple web server to host a frontend where users can enter a
 *  Open your terminal, navigate (cd) to your app's directory, and run steps 3-4 above.
  
 ## Resources
-* [Notebook: Fine-tune Gemma 3 270M IT](https://github.com/misquan/Emoji-Gemma-on-Web/blob/main/resources/Fine_tune_Gemma_3_270M_for_emoji_generation%20(1).ipynb)
-* [Notebook: Convert Gemma 3 270M IT to ONNX](https://github.com/misquan/Emoji-Gemma-on-Web/blob/main/resources/Convert_Gemma_3_270M_to_ONNX.ipynb)
+* [Notebook: Fine-tune Gemma 3 270M](https://github.com/misquan/Emoji-Gemma-on-Web/blob/main/resources/Fine_tune_Gemma_3_270M_for_emoji_generation%20(1).ipynb)
+* [Notebook: Convert Gemma 3 270M to ONNX](https://github.com/misquan/Emoji-Gemma-on-Web/blob/main/resources/Convert_Gemma_3_270M_to_ONNX.ipynb)
 * [Hugging Face Transformers.js documentation](https://huggingface.co/docs/transformers.js/index)
