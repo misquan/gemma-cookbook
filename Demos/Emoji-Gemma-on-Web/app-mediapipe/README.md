@@ -1,4 +1,4 @@
-# Inference with a fine-tuned Gemma 3 270M model running in the browser via MediaPipe LLM Inference API
+# Run a fine-tuned Gemma 3 270M model in the browser with MediaPipe LLM Inference API
 
 This app demonstrates how to generate emojis from a text input using a fine-tuned Gemma 3 270M model running directly in the browser. 
 
