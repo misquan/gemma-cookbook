@@ -16,9 +16,9 @@ Preview the app on [Hugging Face](https://huggingface.co/kr15t3n/gemmoji).
 Notebooks to fine-tune and optimize Gemma 3 270M for web
 | Notebook  | Description |
 | ------------- |-------------|
-| [Fine-tune Gemma 3 270M](./resources/Convert_Gemma_3_270M_to_ONNX.ipynb)   | Fine-tune the Transformers model using Quantized Low-Rank Adaptation (QLoRA) |
-| [Convert to MediaPipe](./resources/Convert_Gemma_models_to_run_on_device_with_MediaPipe_LLM_Inference_API.ipynb) | Quantize and convert the model to `.litert`, then bundle into a `.task` file for use with the LLM Inference API |
-| [Convert to ONNX](./resources/Convert_Gemma_3_270M_to_ONNX.ipynb) | Quantize and convert Gemma 3 to `.onnx` for use with Transformers.js via ONNX Runtime  |
+| [Fine-tune Gemma 3 270M](./resources/Fine_tune_Gemma_3_270M_for_emoji_generation.ipynb)   | Fine-tune the Gemma 3 Transformers model using Quantized Low-Rank Adaptation (QLoRA) |
+| [Convert to MediaPipe](./resources/Convert_Gemma_3_270M_to_LiteRT_for_MediaPipe_LLM_Inference_API.ipynb) | Quantize and convert your fine-tuned Gemma 3 270M model to `.litert`, then bundle into a `.task` file for use with the LLM Inference API |
+| [Convert to ONNX](./resources/Convert_Gemma_3_270M_to_ONNX.ipynb) | Quantize and convert your fine-tuned Gemma 3 270M model to `.onnx` for use with Transformers.js via ONNX Runtime  |
 
 ### Datasets
 Datasets provided in .csv format that you can use for fine-tuning. Community datasets coming soon!
