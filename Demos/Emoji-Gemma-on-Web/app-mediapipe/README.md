@@ -21,6 +21,6 @@ This demo sets up a simple web server to host a frontend where users can enter a
 *  Open your terminal, navigate (`cd`) to your app's directory, and run steps 3-4 above.
  
 ## Resources
-* [Notebook: Fine-tune Gemma 3 270M](/resources/Fine_tune_Gemma_3_270M_for_emoji_generation.ipynb)
-* [Notebook: Convert Gemma 3 270M for use with MediaPipe](/resources/Convert_Gemma_3_270M_to_LiteRT_for_MediaPipe_LLM_Inference_API.ipynb)
+* [Notebook: Fine-tune Gemma 3 270M](./resources/Fine_tune_Gemma_3_270M_for_emoji_generation.ipynb)
+* [Notebook: Convert Gemma 3 270M for use with MediaPipe](./resources/Convert_Gemma_3_270M_to_LiteRT_for_MediaPipe_LLM_Inference_API.ipynb)
 * [MediaPipe LLM Inference API Web documentation](https://ai.google.dev/edge/mediapipe/solutions/genai/llm_inference/web_js)
