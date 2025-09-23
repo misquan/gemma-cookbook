@@ -22,6 +22,6 @@ This demo sets up a simple web server to host a frontend where users can enter a
 *  Open your terminal, navigate (cd) to your app's directory, and run steps 3-4 above.
  
 ## Resources
-* [Notebook: Fine-tune Gemma 3 270M](https://github.com/misquan/Emoji-Gemma-on-Web/blob/main/resources/Fine_tune_Gemma_3_270M_for_emoji_generation%20(1).ipynb)
-* [Notebook: Convert Gemma 3 270M to ONNX](https://github.com/misquan/Emoji-Gemma-on-Web/blob/main/resources/Convert_Gemma_3_270M_to_ONNX.ipynb)
+* [Notebook: Fine-tune Gemma 3 270M](https://github.com/google-gemini/gemma-cookbook/blob/main/Demos/Emoji-Gemma-on-Web/resources/Fine_tune_Gemma_3_270M_for_emoji_generation.ipynb)
+* [Notebook: Convert Gemma 3 270M to ONNX](https://github.com/google-gemini/gemma-cookbook/blob/main/Demos/Emoji-Gemma-on-Web/resources/Convert_Gemma_3_270M_to_ONNX.ipynb)
 * [Hugging Face Transformers.js documentation](https://huggingface.co/docs/transformers.js/index)
