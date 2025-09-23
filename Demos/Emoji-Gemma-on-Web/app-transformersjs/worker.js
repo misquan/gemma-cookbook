@@ -29,7 +29,7 @@ self.onmessage = async (event) => {
 
         // Set up pipeline options for WebGPU and WASM (CPU) fallback
         const pipelineOptions = {
-          dtype: "q4",
+          dtype: "q4", // Specify which quantized version of your onnx model to use
           device: hasWebGPU ? "webgpu" : "wasm", // Use WebGPU if available, else fallback to WASM (CPU)
           progress_callback: (progress) => {
             if (progress.status === "progress" && progress.file?.endsWith?.("onnx_data")) {
