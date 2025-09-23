@@ -52,7 +52,7 @@ self.onmessage = async (event) => {
 
         pipe = await pipeline(
           "text-generation", 
-          "kr15t3n/my-emojigemma-onnx", 
+          "pathto/model",    // Point to your model on Hugging Face Hub 
           pipelineOptions
         );
         
