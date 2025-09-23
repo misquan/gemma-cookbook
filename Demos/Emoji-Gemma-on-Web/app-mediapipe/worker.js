@@ -1,13 +1,11 @@
 // This demo requires importScripts, so we use a local, pre-built JavaScript bundle.
-// This also enables the app to run offline without needing to access a CDN.
 
-importScripts('/mediapipe_genai_bundle.js'); //from npm @mediapipe/tasks-genai@0.10.24
+importScripts('/mediapipe_genai_bundle.js'); // from npm @mediapipe/tasks-genai@0.10.24
 
 const { FilesetResolver, LlmInference } = self.BundledCode;
 
 let pipe;
-// Ensure this filename matches your actual model file.
-let modelPath = './myemoji-gemma-3-270m-it.task'; 
+let modelPath = './myemoji-gemma-3-270m-it.task'; // Ensure this filename matches your actual model file.
 
 const START_TURN_USER = "<start_of_turn>user\n";
 const END_TURN_USER = "<end_of_turn>\n";
