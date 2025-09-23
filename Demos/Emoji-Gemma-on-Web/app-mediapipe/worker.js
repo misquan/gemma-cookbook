@@ -44,9 +44,6 @@ self.onmessage = async (event) => {
         self.postMessage({ type: "error", data: "Model not loaded yet." });
         return;
       }
-
-
-
       try {
         const generatedResponses = new Set();
         const prompt = `${START_TURN_USER}Translate this text to emoji: ${data.prompt}${END_TURN_USER}${START_TURN_MODEL}`;
