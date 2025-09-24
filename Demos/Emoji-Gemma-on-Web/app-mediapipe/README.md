@@ -1,26 +1,19 @@
 # Run a fine-tuned Gemma 3 270M model in the browser with MediaPipe LLM Inference API
 
-This app demonstrates how to generate emojis from a text input using a fine-tuned Gemma 3 270M model running directly in the browser. 
+This app demonstrates how to generate emojis from a text input using a fine-tuned Gemma 3 270M model running directly in the browser. For this demo you'll just change one line of code to point to your MediaPipe Task model bundle.
 
-Fine-tuning allows you to adapt models to specific tasks by training it with your own data.  To use your own fine-tuned model, you'll first need to convert it to the LiteRT (.tflite) format and bundle it in a .task file. You can then replace the demo model by updating the model path in `worker.js`.
+## Run the demo
+1. Download the app files in this directory and include your .task file in the local app folder.
+2. In the worker.js file, update the `modelPath` to point to your model.
+3. Open terminal on your computer and navigate (`cd`) to the app folder.
+4. Run `npx serve` to start the local server.
+5. Open the provided localhost address in your browser to run the app.
 
 ## How it works
 This demo sets up a simple web server to host a frontend where users can enter a text prompt. This starts a generation process in a web worker to avoid blocking the main UI thread. The worker uses a bundled version of the MediaPipe Tasks GenAI package ([@mediapipe/tasks-genai](https://www.npmjs.com/package/@mediapipe/tasks-genai)) to generate a response from the model and send it back to the user.
 
-## Run the demo
+**Requirements:** Browser with [WebGPU support](https://caniuse.com/webgpu)
 
-1. Open terminal and clone the repo on your local machine: `git clone https://github.com/google-gemini/gemma-cookbook.git`.
-2. Navigate to the app directory: `cd gemma-cookbook/Demos/Emoji-Gemma-on-Web/app-mediapipe`.
-3. Run `npx serve` to start the local server.
-4. Open the provided `localhost` URL in your browser to run the app.
-
-**To run your own model:**
-
-*  Convert your fine-tuned Gemma 3 270M model to the .tflite format and bundle it in a .task file.
-*  Download the app files in this directory and replace the `modelPath` string in the `worker.js` file to point to your model.
-*  Open your terminal, navigate (`cd`) to your app's directory, and run steps 3-4 above.
- 
 ## Resources
 * [Notebook: Fine-tune Gemma 3 270M](https://github.com/google-gemini/gemma-cookbook/blob/main/Demos/Emoji-Gemma-on-Web/resources/Fine_tune_Gemma_3_270M_for_emoji_generation.ipynb)
 * [Notebook: Convert Gemma 3 270M for use with MediaPipe](https://github.com/google-gemini/gemma-cookbook/blob/main/Demos/Emoji-Gemma-on-Web/resources/Convert_Gemma_3_270M_to_LiteRT_for_MediaPipe_LLM_Inference_API.ipynb)
-* [MediaPipe LLM Inference API Web documentation](https://ai.google.dev/edge/mediapipe/solutions/genai/llm_inference/web_js)
