@@ -7,7 +7,7 @@ This app demonstrates how to generate emojis from a text input using a fine-tune
 2. In the worker.js file, update the `modelPath` to point to your model.
 3. Open terminal on your computer and navigate (`cd`) to the app folder.
 4. Run `npx serve` to start the local server.
-5. Open the provided localhost address in your browser to run the app.
+5. Open the provided `localhost` address in your browser to run the app.
 
 ## How it works
 This demo sets up a simple web server to host a frontend where users can enter a text prompt. This starts a generation process in a web worker to avoid blocking the main UI thread. The worker uses a bundled version of the MediaPipe Tasks GenAI package ([@mediapipe/tasks-genai](https://www.npmjs.com/package/@mediapipe/tasks-genai)) to generate a response from the model and send it back to the user.
