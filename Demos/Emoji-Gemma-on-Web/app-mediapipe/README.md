@@ -17,3 +17,4 @@ This demo sets up a simple web server to host a frontend where users can enter a
 ## Resources
 * [Notebook: Fine-tune Gemma 3 270M](https://github.com/google-gemini/gemma-cookbook/blob/main/Demos/Emoji-Gemma-on-Web/resources/Fine_tune_Gemma_3_270M_for_emoji_generation.ipynb)
 * [Notebook: Convert Gemma 3 270M for use with MediaPipe](https://github.com/google-gemini/gemma-cookbook/blob/main/Demos/Emoji-Gemma-on-Web/resources/Convert_Gemma_3_270M_to_LiteRT_for_MediaPipe_LLM_Inference_API.ipynb)
+* [MediaPipe LLM Inference Web documentation](https://ai.google.dev/edge/mediapipe/solutions/genai/llm_inference/web_js)
