@@ -14,7 +14,6 @@ self.onmessage = async (event) => {
   const { type, data } = event.data;
   switch (type) {
     case "load":
-      let progressInterval;
       try {
         console.log("[Worker] Loading model...");
         
@@ -32,35 +31,23 @@ self.onmessage = async (event) => {
           dtype: "q4", // Specify which quantized version of your onnx model to use
           device: hasWebGPU ? "webgpu" : "wasm", // Use WebGPU if available, else fallback to WASM (CPU)
           progress_callback: (progress) => {
+            // Report download progress of the main model file
             if (progress.status === "progress" && progress.file?.endsWith?.("onnx_data")) {
-              clearInterval(progressInterval);
-              const reportedProgress = Math.floor(Math.min(progress.progress, 99));
+              const reportedProgress = Math.floor(progress.progress);
               self.postMessage({ type: "progress", data: { progress: reportedProgress } });
             }
           },
         };  
 
-        let fakeProgress = 0;
-        progressInterval = setInterval(() => {
-          fakeProgress += 1;
-          if (fakeProgress <= 90) {
-            self.postMessage({ type: "progress", data: { progress: fakeProgress } });
-          } else {
-            clearInterval(progressInterval);
-          }
-        }, 50);
-
         pipe = await pipeline(
           "text-generation", 
-          "pathto/model",    // Point to your model on Hugging Face Hub 
+          "kr15t3n/myemoji-gemma-3-270m-it-onnx",    // Point to your model on Hugging Face Hub 
           pipelineOptions
         );
         
-        clearInterval(progressInterval);
         console.log("[Worker] Model loaded successfully.");
         self.postMessage({ type: "loaded" });
       } catch (error) {
-        clearInterval(progressInterval);
         console.error("[Worker] Model loading failed:", error);
         self.postMessage({ type: "error", data: error.message });
       }
@@ -76,10 +63,11 @@ self.onmessage = async (event) => {
         
         for (let i = 0; i < 3; i++) {
           const results = await pipe(messages, { 
-              max_new_tokens: 8, 
+              max_new_tokens: 16, 
               do_sample: true, 
               temperature: 0.1, 
-              top_p: 0.9, 
+              top_p: 0.2, 
+              top_k: 3, 
               num_return_sequences: 1, 
               repetition_penalty: 1.2,
               return_full_text: false 
@@ -100,7 +88,7 @@ self.onmessage = async (event) => {
           }
 
           if (assistantResponse) {
-              const cleanResponse = assistantResponse.replace(/[^\p{Emoji}\s]/gu, '').trim();
+              const cleanResponse = assistantResponse.replace(/[^\p{Emoji}\s\u200D]/gu, '').trim();
               // Check if the response is new and valid
               if (cleanResponse && !generatedResponses.has(cleanResponse)) {
                   generatedResponses.add(cleanResponse);
