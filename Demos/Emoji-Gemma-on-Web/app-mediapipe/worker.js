@@ -51,7 +51,7 @@ self.onmessage = async (event) => {
         for (let i = 0; i < 3; i++) {
           const modifiedPrompt = prompt + ' '.repeat(i);
           const rawResponse = await pipe.generateResponse(modifiedPrompt);
-          const cleanResponse = rawResponse.replace(/[^\p{Emoji}\s]/gu, '').trim();
+          const cleanResponse = rawResponse.replace(/[^\p{Emoji}\s\u200D]/gu, '').trim();
           if (cleanResponse) {
             generatedResponses.add(cleanResponse);
           }
